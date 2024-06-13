@@ -2,8 +2,8 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 
 const dimensionsOptions = [
-  { label: "W", property: "width" },
-  { label: "H", property: "height" },
+  { label: "В", property: "width" },
+  { label: "Ш", property: "height" },
 ];
 
 type Props = {

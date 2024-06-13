@@ -25,15 +25,15 @@ export const CommentsOverlay = () => {
   // get the max z-index of a thread
   const maxZIndex = useMaxZIndex();
 
-  return (
-    <div>
-      {threads
-        .filter((thread) => !thread.metadata)
-        .map((thread) => (
-          <OverlayThread key={thread.id} thread={thread} maxZIndex={maxZIndex} />
-        ))}
-    </div>
-  );
+  // return (
+  //   <div>
+  //     {threads
+  //       .filter((thread) => !thread.metadata.resolved)
+  //       .map((thread) => (
+  //         <OverlayThread key={thread.id} thread={thread} maxZIndex={maxZIndex} />
+  //       ))}
+  //   </div>
+  // );
 };
 
 const OverlayThread = ({ thread, maxZIndex }: OverlayThreadProps) => {
@@ -57,7 +57,7 @@ const OverlayThread = ({ thread, maxZIndex }: OverlayThreadProps) => {
 
   // If other thread(s) above, increase z-index on last element updated
   const handleIncreaseZIndex = useCallback(() => {
-    if (maxZIndex === thread.metadata) {
+    if (maxZIndex === thread.metadata.zIndex) {
       return;
     }
 
@@ -80,7 +80,7 @@ const OverlayThread = ({ thread, maxZIndex }: OverlayThreadProps) => {
       id={`thread-${thread.id}`}
       className="absolute left-0 top-0 flex gap-5"
       style={{
-        transform: `translate(${thread.metadata}px, ${thread.metadata}px)`,
+        transform: `translate(${thread.metadata.x}px, ${thread.metadata.y}px)`,
       }}
     >
       {/* render the thread */}

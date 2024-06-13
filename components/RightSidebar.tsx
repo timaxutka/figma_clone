@@ -37,9 +37,8 @@ const RightSidebar = ({
   const memoizedContent = useMemo(
     () => (
       <section className="flex flex-col border-t border-primary-grey-200 bg-primary-black text-primary-grey-300 min-w-[227px] sticky right-0 h-full max-sm:hidden select-none">
-        <h3 className=" px-5 pt-4 text-xs uppercase">Design</h3>
-        <span className="text-xs text-primary-grey-300 mt-3 px-5 border-b border-primary-grey-200 pb-4">
-          Make changes to canvas as you like
+        <h3 className="px-5 pt-4 text-xs">Инструменты</h3>
+        <span className="px-5 border-b border-primary-grey-200 pb-4">
         </span>
 
         <Dimensions
@@ -60,7 +59,7 @@ const RightSidebar = ({
         <Color
           inputRef={colorInputRef}
           attribute={elementAttributes.fill}
-          placeholder="color"
+          placeholder="Цвет"
           attributeType="fill"
           handleInputChange={handleInputChange}
         />
@@ -68,7 +67,7 @@ const RightSidebar = ({
         <Color
           inputRef={strokeInputRef}
           attribute={elementAttributes.stroke}
-          placeholder="stroke"
+          placeholder="Обводка"
           attributeType="stroke"
           handleInputChange={handleInputChange}
         />
